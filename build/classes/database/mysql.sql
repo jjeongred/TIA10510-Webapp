@@ -12,9 +12,9 @@ CREATE TABLE event_member(
 	event_id VARCHAR(5) COMMENT '活動流水號',
 	member_id VARCHAR(5) COMMENT '會員流水號',
 	participate_status INT DEFAULT 1 COMMENT '參與候補狀態 0 = 候補, 1 = 已參與',
-	participated_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT fk_event_member_event_event_id FOREIGN KEY (event_id) REFERENCES event (event_id),
-    CONSTRAINT fk_event_member_member_member_id FOREIGN KEY (member_id) REFERENCES member (member_id)
+	participated_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+--    CONSTRAINT fk_event_member_event_event_id FOREIGN KEY (event_id) REFERENCES event (event_id),
+--    CONSTRAINT fk_event_member_member_member_id FOREIGN KEY (member_id) REFERENCES member (member_id)
 );
 
 CREATE TABLE comments (
@@ -22,8 +22,8 @@ CREATE TABLE comments (
 	event_member_id VARCHAR(5) NOT NULL comment "活動參與會員",
 	comment_hide INT comment "留言隱藏",
 	comment_message TEXT NOT NULL comment "留言內容",
-	comment_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-	CONSTRAINT fk_comments_event_member_event_member_id FOREIGN KEY (event_member_id) REFERENCES event_member (event_member_id)
+	comment_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+--	CONSTRAINT fk_comments_event_member_event_member_id FOREIGN KEY (event_member_id) REFERENCES event_member (event_member_id)
 );
 
 -- Insert Data

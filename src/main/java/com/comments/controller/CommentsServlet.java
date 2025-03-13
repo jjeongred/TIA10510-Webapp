@@ -212,7 +212,7 @@ public class CommentsServlet extends HttpServlet {
 			commentsSvc.deleteComments(commentId);
 
 			/*************************** 3.查詢完成,準備轉交(Send the Success view) ************/
-			String url = "/backend/Comments/listAllComments.jsp";
+			String url = "/backend/comments/listAllComments.jsp";
 			RequestDispatcher successView = request.getRequestDispatcher(url);
 			successView.forward(request, response);
 		}
